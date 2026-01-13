@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Our Café</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #f3ede7, #d9c6b0);
+        padding: 40px;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        color: #3b2f2f;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #555;
+    }
+
+    .about-box {
+        max-width: 900px;
+        margin: auto;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        padding: 30px;
+        animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .tabs button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background: #ddd;
+        font-weight: bold;
+    }
+
+    .tabs button.active {
+        background: #6f4e37;
+        color: #fff;
+    }
+
+    .content {
+        display: none;
+        animation: fadeIn 0.4s ease;
+    }
+
+    .content.active {
+        display: block;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+        text-align: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .stat {
+        font-size: 28px;
+        color: #6f4e37;
+        font-weight: bold;
+    }
+
+    .label {
+        font-size: 14px;
+        color: #555;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>About Our Café</h1>
+<p class="subtitle">Crafted with passion. Served with purpose.</p>
+
+<div class="about-box">
+
+    <div class="tabs">
+        <button class="active" onclick="showTab('story', this)">Our Story</button>
+        <button onclick="showTab('mission', this)">Mission</button>
+        <button onclick="showTab('values', this)">Values</button>
+    </div>
+
+    <div id="story" class="content active">
+        <p>
+            We started this café with one simple goal: serve honest coffee without shortcuts.
+            No instant blends. No frozen food. Just quality ingredients and consistency.
+        </p>
+        <p>
+            Every cup is brewed with intention. Every customer matters.
+        </p>
+    </div>
+
+    <div id="mission" class="content">
+        <p>
+            Our mission is to create a space where people slow down, connect,
+            and enjoy coffee the way it was meant to be enjoyed.
+        </p>
+        <p>
+            Fast service. Zero compromise on quality.
+        </p>
+    </div>
+
+    <div id="values" class="content">
+        <ul>
+            <li>✔ Quality over quantity</li>
+            <li>✔ Transparency in sourcing</li>
+            <li>✔ Respect for customers and staff</li>
+            <li>✔ Continuous improvement</li>
+        </ul>
+    </div>
+
+    <div class="stats">
+        <div>
+            <div class="stat" data-target="5000">0</div>
+            <div class="label">Happy Customers</div>
+        </div>
+        <div>
+            <div class="stat" data-target="12000">0</div>
+            <div class="label">Cups Served</div>
+        </div>
+        <div>
+            <div class="stat" data-target="3">0</div>
+            <div class="label">Years Experience</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function showTab(id, btn) {
+        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+
+        document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    // Counter animation
+    const counters = document.querySelectorAll('.stat');
+    counters.forEach(counter => {
+        let start = 0;
+        const target = +counter.dataset.target;
+        const increment = target / 100;
+
+        const update = () => {
+            start += increment;
+            if (start < target) {
+                counter.textContent = Math.floor(start);
+                requestAnimationFrame(update);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        update();
+    });
+</script>
+
+</body>
+</html>

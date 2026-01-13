@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Café Login</title>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #3b2f2f, #6f4e37);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-box {
+        background: #ffffff;
+        width: 350px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        animation: slideUp 0.8s ease;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #3b2f2f;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .input-group label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        color: #999;
+        font-size: 14px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: 0.3s;
+        background: #fff;
+        padding: 0 5px;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+        top: -6px;
+        font-size: 12px;
+        color: #6f4e37;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #6f4e37;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background: #3b2f2f;
+    }
+
+    .message {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .success {
+        color: green;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Café Login</h2>
+
+    <form id="loginForm">
+        <div class="input-group">
+            <input type="text" id="username" required placeholder=" ">
+            <label>Username</label>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" required placeholder=" ">
+            <label>Password</label>
+        </div>
+
+        <button type="submit">Login</button>
+        <div class="message" id="message"></div>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        message.textContent = "Checking credentials...";
+        message.className = "message";
+
+        setTimeout(() => {
+            if (username === "admin" && password === "1234") {
+                message.textContent = "Login successful";
+                message.classList.add("success");
+            } else {
+                message.textContent = "Invalid username or password";
+                message.classList.add("error");
+            }
+        }, 1000);
+    });
+</script>
+
+</body>
+</html>

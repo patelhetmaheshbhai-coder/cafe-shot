@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Café Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            padding: 20px;
+        }
+        form {
+            max-width: 700px;
+            margin: auto;
+            background:balck;
+            padding: 25px;
+            border-radius: 6px;
+            color: yellow;
+            border-color: blue;
+
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .rating-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .rating-group label {
+            font-weight: normal;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: blue;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-style: italic;
+        }
+        button:hover {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" method="post">
+    <h2>Café Feedback Form</h2>
+    <p>Please provide honest feedback based on your visit.</p>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+
+    <label for="contact">Email or Phone</label>
+    <input type="text" id="contact" name="contact">
+
+    <label for="visitDate">Date of Visit</label>
+    <input type="date" id="visitDate" name="visitDate" required>
+
+    <label>Type of Visit</label>
+    <select name="visitType" required>
+        <option value="">Select</option>
+        <option value="dine-in">Dine-in</option>
+        <option value="takeaway">Takeaway</option>
+    </select>
+
+    <label>Food Quality</label>
+    <select name="foodQuality" required>
+        <option value="">Rate</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Excellent</option>
+    </select>
+
+    <label>Beverage Quality</label>
+    <select name="beverageQuality" required>
+        <option value="">Rate</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Excellent</option>
+    </select>
+
+    <label>Staff Behavior</label>
+    <select name="staffBehavior" required>
+        <option value="">Rate</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 - Excellent</option>
+    </select>
+
+    <label for="positive">What did we do well?</label>
+    <textarea id="positive" name="positive" rows="3"></textarea>
+
+    <label for="improve">What should we improve?</label>
+    <textarea id="improve" name="improve" rows="3"></textarea>
+
+    <label for="comments">Additional Comments</label>
+    <textarea id="comments" name="comments" rows="3"></textarea>
+
+    <button type="submit">Submit Feedback</button>
+</form>
+
+</body>
+</html>

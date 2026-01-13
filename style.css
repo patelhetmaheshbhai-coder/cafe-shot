@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("photo.avif");
+}
+
+.tello{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    border-bottom: 2px solid blue;
+    align-items: center;
+    padding-left: 10px;
+    border: 2px solid black;
+    color: yellow;
+    font: bold;
+    font-size: 17px;
+}
+
+.zetto{
+    border-radius: 10px;
+    padding: 10px;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.patel{
+   color: yellow;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.patel:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
+.none{
+    color: white;
+    font-style: italic;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 0px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: max-content;
+    padding: 10px;
+    background-color: black;
+    opacity: 0.4;
+}
+.more{
+    color: black;
+    margin-left: 0px;
+    font-size: 27px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: max-content;
+    padding: 30px;
+    background-color:black;
+    opacity: 0.4;
+    font-style: italic;
+}
+
+.orin{
+    color: white;
+    margin-left: 100px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: max-content;
+    padding: 30px;
+    background-color:black;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.nun{
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: 40px;
+    font-size: 20px;
+    opacity: 0.6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+}
+.nun:hover{
+    background-color: blue;
+}
